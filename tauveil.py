@@ -1,6 +1,6 @@
-'''Tauveil, by Illuis <me.illuis@gmail.com>
+'''Tauveil, by Oelin <me.oelin@gmail.com>
  
-Tauveil steganographically embeds an esoteric me with in a given cover text.
+Tauveil steganographically embeds an esoteric message with in a given cover text.
 This is achived by placing non-printing characters at certain positions in
 the cover. This effectively encodes where parts of the secret message are
 located. As such the message may be extracted by locating these points; easy
@@ -23,8 +23,7 @@ def stringify(generator):
  
  
  
-@stringify
- 
+@stringify 
 def veil(message, mask):
    message = iter(message)
    part = next(message)
@@ -40,7 +39,6 @@ def veil(message, mask):
  
  
 @stringify
- 
 def unveil(mask):
    for index, char in enumerate(mask):
       if char == noprint:
