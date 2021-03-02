@@ -31,4 +31,5 @@ def unveil(mask):
     mask = iter(mask)
 
     for char in mask:
-        if (char == hidden): yield next(mask)
+        if (char == hidden):
+            yield next(mask)
