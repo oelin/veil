@@ -13,14 +13,12 @@ def string(func):
 
 @string 
 def veil(text, mask):
-
     text = iter(text + '\0')
     current = next(text)
 
     for char in mask:
         if char == current:
             current = next(text)
- 
             yield hidden
             
         yield char
@@ -33,5 +31,4 @@ def unveil(mask):
     mask = iter(mask)
 
     for char in mask:
-        if (char == hidden):
-            yield next(mask)
+        if (char == hidden): yield next(mask)
